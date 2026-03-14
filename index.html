@@ -7,249 +7,52 @@
     <style>
         /* --- CSS STYLES --- */
         :root {
-            --primary-color: #d4a5a5; /* Dusty Pink */
-            --secondary-color: #333;   /* Dark Grey */
-            --accent-color: #c5a059;   /* Gold */
+            --primary-color: #d4a5a5;
+            --secondary-color: #333;
+            --accent-color: #c5a059;
             --light-bg: #f9f9f9;
             --white: #ffffff;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--secondary-color);
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .btn-book {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .btn-book:hover {
-            background-color: #b88b8b;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .hero-btn {
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            border: 2px solid var(--accent-color);
-            transition: all 0.3s;
-        }
-
-        .hero-btn:hover {
-            background-color: transparent;
-            color: var(--white);
-        }
-
-        /* Sections General */
-        section {
-            padding: 4rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title p {
-            color: #777;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--light-bg);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .gallery-item {
-            height: 300px;
-            background-color: #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Contact */
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            justify-content: center;
-        }
-
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .contact-form button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* In a real site, add a hamburger menu script here */
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        body {line-height:1.6; color:var(--secondary-color);}
+        nav {background: var(--white); padding:1rem 5%; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+        .logo {font-size:1.5rem; font-weight:bold; color:var(--primary-color); text-transform:uppercase; letter-spacing:2px;}
+        .nav-links {list-style:none; display:flex;}
+        .nav-links li {margin-left:2rem;}
+        .nav-links a {text-decoration:none; color:var(--secondary-color); font-weight:500; transition:color 0.3s;}
+        .nav-links a:hover {color:var(--primary-color);}
+        .btn-book {background-color:var(--primary-color); color:var(--white); padding:0.5rem 1.5rem; border-radius:25px; text-decoration:none; transition:background 0.3s;}
+        .btn-book:hover {background-color:#b88b8b;}
+        .hero {background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size:cover; background-position:center; height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:var(--white); padding:0 20px;}
+        .hero h1 {font-size:3.5rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+        .hero p {font-size:1.2rem; margin-bottom:2rem; max-width:600px;}
+        .hero-btn {background-color:var(--accent-color); color:var(--white); padding:1rem 2rem; text-decoration:none; font-size:1.1rem; border-radius:5px; border:2px solid var(--accent-color); transition:all 0.3s;}
+        .hero-btn:hover {background-color:transparent; color:var(--white);}
+        section {padding:4rem 5%;}
+        .section-title {text-align:center; margin-bottom:3rem;}
+        .section-title h2 {font-size:2.5rem; color:var(--primary-color); margin-bottom:0.5rem;}
+        .section-title p {color:#777;}
+        .services-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem;}
+        .service-card {background:var(--light-bg); padding:2rem; text-align:center; border-radius:10px; transition: transform 0.3s;}
+        .service-card:hover {transform:translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+        .service-icon {font-size:2rem; margin-bottom:1rem; color:var(--accent-color);}
+        .gallery-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1rem;}
+        .gallery-item {height:300px; background-color:#ddd; border-radius:8px; overflow:hidden; position:relative;}
+        .gallery-item img {width:100%; height:100%; object-fit:cover; transition:transform 0.5s;}
+        .gallery-item:hover img {transform:scale(1.1);}
+        .contact-container {display:flex; flex-wrap:wrap; gap:3rem; justify-content:center;}
+        .contact-info, .contact-form {flex:1; min-width:300px;}
+        .contact-form input, .contact-form textarea {width:100%; padding:10px; margin-bottom:1rem; border:1px solid #ddd; border-radius:5px;}
+        .contact-form button {background-color:var(--primary-color); color:white; border:none; padding:10px 20px; cursor:pointer; border-radius:5px; font-size:1rem;}
+        footer {background-color:var(--secondary-color); color:var(--white); text-align:center; padding:2rem;}
+        @media(max-width:768px){.nav-links{display:none;} .hero h1{font-size:2.5rem;}}
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <div class="logo">Kashyaf  Nail Con</div>
+        <div class="logo">Kashyap's Nail Con</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -303,7 +106,6 @@
             <p>Check out some of our latest creations</p>
         </div>
         <div class="gallery-grid">
-            <!-- Using placeholder images from Unsplash -->
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Art 1">
             </div>
@@ -324,41 +126,64 @@
         </div>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Kashyaf' Nail Con</h3>
-                <p><strong>Address:</strong><br><br>nilanga, shivaji nagar</p>
-                <br>
-                <p><strong>Phone:</strong><br> 84320 35819 </p>
-                <br>
+                <h3>Kashyap's Nail Con</h3>
+                <p><strong>Address:</strong><br>Nilanga, Shivaji Nagar</p>
                 <p><strong>Hours:</strong><br>Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: Closed</p>
             </div>
-                
-<div class="contact-form">
-<form action="https://formspree.io/f/xdawzqjl" method="POST">
-    <h3>Contact Us</h3>
-    <p>Apna message bhejne ke liye form fill karein:</p>
+            <div class="contact-form">
+                <h3>Contact Us</h3>
+                <p>Apna message bhejne ke liye form fill karein:</p>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="tel" name="phone_number" placeholder="Phone Number" required>
+                    <textarea name="message" rows="5" placeholder="Message or Service Request" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <textarea name="message" rows="5" placeholder="Message or Service Request" required></textarea>
-
-    <button type="submit">Send Message</button>
-</form>
-</div>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Kashyaf Nail Con. All rights reserved.</p>
+        <p>&copy; 2023 Kashyap's Nail Con. All rights reserved.</p>
     </footer>
 
+    <!-- Smooth Scrolling -->
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e){
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+            });
+        });
+    </script>
+
+    <!-- EmailJS Integration -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("Oy6tyRCQMjESZnTrl"); // Public Key
+        })();
+
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", function(event){
+            event.preventDefault();
+
+            emailjs.send("service_b0rwkmo", "template_05ducbb", {
+                name: contactForm.name.value,
+                phone_number: contactForm.phone_number.value,
+                message: contactForm.message.value
+            })
+            .then(function(response){
+                alert("Message sent successfully!");
+                contactForm.reset();
+            }, function(error){
+                alert("Failed to send message. Please try again.");
+                console.log(error);
             });
         });
     </script>
 </body>
+</html>
+            
                                                                                                    </html>
