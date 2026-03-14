@@ -134,13 +134,38 @@
                 <h3>Contact Us</h3>
                 <p>Apna message bhejne ke liye form fill karein:</p>
                 <form id="contactForm">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="tel" name="phone_number" placeholder="Phone Number" required>
-                    <textarea name="message" rows="5" placeholder="Message or Service Request" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+    <input type="text" name="user_name" placeholder="Your Name" required>
+    <input type="tel" name="user_phone" placeholder="Phone Number" required>
+    <textarea name="user_message" rows="5" placeholder="Message or Service Request" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+(function(){
+    emailjs.init("Oy6tyRCQMjESZnTrl"); // Your Public Key
+})();
+
+const contactForm = document.getElementById("contactForm");
+contactForm.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    emailjs.send("service_b0rwkmo", "template_05ducbb", {
+        user_name: contactForm.user_name.value,
+        user_phone: contactForm.user_phone.value,
+        user_message: contactForm.user_message.value
+    })
+    .then(function(response){
+        alert("Message sent successfully! ✅");
+        contactForm.reset();
+    }, function(error){
+        console.log("FAILED:", error);
+        alert("Failed to send message. Please try again.");
+    });
+});
+</script>
             </div>
-        </div>
+        
     </section>
 
     <!-- Footer -->
